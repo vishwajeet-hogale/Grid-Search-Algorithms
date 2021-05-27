@@ -4,8 +4,8 @@ using namespace std;
 vector<vector<int>> graph(
     {
         {1, 1, 1, 1},
-        {0, 0, 1, 1},
-        {0, 0, 1, 1},
+        {1, 0, 1, 1},
+        {1, 1, 1, 1},
         {0, 0, 0, 1},
     });
 bool isValid(pair<int, int> point)
