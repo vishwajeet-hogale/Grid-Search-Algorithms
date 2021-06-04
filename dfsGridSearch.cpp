@@ -3,10 +3,11 @@
 using namespace std;
 vector<vector<int>> graph(
     {
-        {1, 1, 1, 1},
-        {1, 0, 1, 1},
-        {1, 1, 1, 1},
-        {0, 0, 0, 1},
+        {1, 1, 1, 1, 1},
+        {1, 0, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {0, 0, 0, 1, 1},
+        {1, 0, 1, 1, 1},
     });
 bool isValid(pair<int, int> point)
 {
@@ -46,7 +47,7 @@ void dfsGridSearch(vector<vector<int>> &graph, pair<int, int> start, pair<int, i
 }
 void printSolution(vector<vector<int>> &graph, int i, vector<pair<int, int>> solution)
 {
-    cout << "Solution " << i << "\n\n";
+    cout << "Solution " << i << "\n";
     vector<vector<char>> map(graph.size(), vector<char>(graph[0].size(), '.'));
     for (auto &x : solution)
         map[x.first][x.second] = '#';
@@ -59,6 +60,7 @@ void printSolution(vector<vector<int>> &graph, int i, vector<pair<int, int>> sol
         }
         cout << endl;
     }
+    cout << "\n";
 }
 void getDFSPaths(vector<vector<int>> &graph, pair<int, int> start, pair<int, int> end)
 {
@@ -75,7 +77,7 @@ void getDFSPaths(vector<vector<int>> &graph, pair<int, int> start, pair<int, int
 }
 int main()
 {
-    pair<int, int> start = make_pair(0, 1), end = make_pair(3, 3);
+    pair<int, int> start = make_pair(0, 1), end = make_pair(4, 3);
     getDFSPaths(graph, start, end);
 
     return 0;
