@@ -122,7 +122,7 @@ def findEnd(maze, moves):
 nums = queue.Queue()
 nums.put("")
 add = ""
-maze = createMaze2()
+maze = createMaze()
 
 while not findEnd(maze, add):
     add = nums.get()
